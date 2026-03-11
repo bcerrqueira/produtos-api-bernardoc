@@ -8,5 +8,11 @@
   "keywords": [],
   "author": "Bernardo Cerqueira",
   "license": "MIT",
-  "description": "Api de produtos da Bulbe"
+  "description": "Api de produtos da Bulbe",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
