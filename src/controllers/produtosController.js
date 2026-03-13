@@ -19,7 +19,12 @@ function obterProduto(req, res) {
 
 // Criar novo produto
 function criarProduto(req, res) {
-  // TODO
+  const { nome, tipo, usina_id, localizacao } = req.body;
+  if (!nome || !tipo) return res.status(400).json({ erro: 'nome e tipo são obrigatórios' });
+  const novo = { id: nextId++, nome, tipo, usina_id, localizacao, status: 'ativo',
+    criado_em: new Date().toISOString(), atualizado_em: new Date().toISOString() };
+  produtos.push(novo);
+  res.status(201).json(novo);
 }
 
 // Atualizar produto
