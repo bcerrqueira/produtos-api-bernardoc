@@ -32,9 +32,13 @@ function atualizarProduto(req, res) {
   // TODO
 }
 
-// Deletar produto
-function deletarProduto(req, res) {
-  // TODO
+// Remover produto
+function removerProduto(req, res) {
+  const idx = produtos.findIndex(d => d.id === Number(req.params.id));
+  if (idx === -1) return res.status(404).json({ erro: 'Produto não encontrado' });
+
+  produtos.splice(idx, 1);
+  res.status(204).send();
 }
 
 
@@ -44,5 +48,5 @@ module.exports = {
   obterProduto,
   criarProduto,
   atualizarProduto,
-  deletarProduto
+  removerProduto
 };
