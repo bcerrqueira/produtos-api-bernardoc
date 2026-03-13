@@ -1,6 +1,6 @@
 console.log("APP INICIADO");
 const express = require('express');
-// const dispositivosRouter = require('./routes/dispositivos');
+const produtosRouter = require('./routes/produtos');
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 });
 
 // Registrar rotas
-// app.use('/api/v1/dispositivos', dispositivosRouter);
+app.use('/api/v1/produtos', produtosRouter);
 
 // Middleware de erro global
 app.use((err, req, res, next) => {
