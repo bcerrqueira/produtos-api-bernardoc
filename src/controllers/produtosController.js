@@ -3,7 +3,7 @@ let nextId = 1;
 
 // Listar todos os produtos
 function listarProdutos(req, res) {
-  // TODO
+  res.status(200).json(produtos);
 }
 
 // Buscar produto por id
