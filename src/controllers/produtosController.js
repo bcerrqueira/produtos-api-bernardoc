@@ -8,7 +8,13 @@ function listarProdutos(req, res) {
 
 // Buscar produto por id
 function obterProduto(req, res) {
-  // TODO
+  const p = produtos.find(d => d.id === Number(req.params.id));
+
+  if (!p) {
+    return res.status(404).json({ erro: 'Produto não encontrado' });
+  }
+
+  res.status(200).json(p);
 }
 
 // Criar novo produto
@@ -25,6 +31,8 @@ function atualizarProduto(req, res) {
 function deletarProduto(req, res) {
   // TODO
 }
+
+
 
 module.exports = {
   listarProdutos,
